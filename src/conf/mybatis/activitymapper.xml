@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<mapper namespace="com.daowen.mapper.ActivityMapper">   
+   
+    <select id="getJoined"   resultType="map" >
+        SELECT h.accountname,h.name,h.idcardno,act.title,h.touxiang FROM activity act,actjoin aj,huiyuan h where
+        act.id=aj.actid and h.accountname=aj.hyaccountname and act.id=${id}
+    </select>
+
+
+   
+</mapper>
